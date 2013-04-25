@@ -1,0 +1,204 @@
+My Emacs Configuration File
+
+* Utilities
+
+** Package
+Setup package
+
+   #+begin_src emacs-lisp
+     (require 'package)
+     (add-to-list 'package-archives
+                  '("marmalade" . "http://marmalade-repo.org/packages/"))
+     (add-to-list 'package-archives
+                  '("melpa" . "http://melpa.milkbox.net/packages/") t)
+     (package-initialize)
+     (package-refresh-contents)
+   #+end_src
+
+** Packages
+
+This is a list of all of the packages that I use.
+   #+begin_src emacs-lisp
+     (setq my-packages '(pallet starter-kit starter-kit-bindings starter-kit-eshell
+                                 starter-kit-js starter-kit-ruby starter-kit-lisp
+                                 auto-complete ac-nrepl cyberpunk-theme pretty-mode
+                                 rvm rsense paredit geiser projectile helm
+                                 helm-projectile yasnippet yasnippet-bundle 
+                                 coffee-mode mmm-mode))
+   #+end_src
+
+** Personal Utilities
+I use this function to make sure that all of my dependencies are installed
+before I try to configure them. I do this to ensure that my computers are kept
+in sync.
+  #+begin_src emacs-lisp
+    (defun require-package (package-name)
+      "Manages my .emacs dependencies"
+      (interactive)
+      (message "Checking for %s." package-name)
+      (unless (package-installed-p package-name)
+        (message "Installing %s." package-name)
+        (package-install package-name)))
+
+    (defun install-my-packages (packages)
+      (if packages
+        (progn
+        (require-package (car packages))
+        (install-my-packages (cdr packages)))))
+    
+    (install-my-packages my-packages)
+  #+end_src
+
+
+* Personal Information
+
+  #+begin_src emacs-lisp
+      (setq user-full-name "Michael Simpson")
+      (setq user-mail-address "mjs2600@gmail.com")
+      (setq auth-sources '("~/.authinfo.gpg"))
+  #+end_src
+
+* Style
+
+  #+begin_src emacs-lisp
+    (load-theme 'cyberpunk t)
+    (require 'pretty-mode)
+    (global-pretty-mode t)
+    (ido-mode t)
+    (set-face-attribute 'default nil :height 140)
+    (setq tab-width 2)
+  #+end_src
+* AutoComplete
+
+  #+begin_src emacs-lisp
+    (require 'auto-complete)
+    (add-to-list 'ac-dictionary-directories "~/elisp/ac-dict/"
+                 "~/.emacs.d/elpa/auto-complete-20120330.1836/dict/")
+    (require 'auto-complete-config)
+    (ac-config-default)
+    (auto-complete-mode t)
+  #+end_src
+
+
+* Ruby
+
+  #+begin_src emacs-lisp
+    (require 'rvm)
+    (require 'rsense)
+    (require 'inf-ruby)
+    (rvm-use-default)
+    
+    (add-hook 'ruby-mode-hook
+              (lambda () (rvm-activate-corresponding-ruby)))
+    (autoload 'inf-ruby-setup-keybindings "inf-ruby" "" t)
+    (autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
+    (eval-after-load 'ruby-mode
+      '(add-hook 'ruby-mode-hook 'inf-ruby-setup-keybindings))
+    
+    ;; Stupid Fixes
+    (setq last-command-char last-command-event)
+    ;;(setq inf-ruby-keys inf-ruby-setup-keybindings)
+  #+end_src
+
+
+** Rails
+  #+begin_src emacs-lisp
+    (require 'mmm-auto)
+    
+    
+    
+    (add-to-list 'load-path "~/.emacs.d/rhtml")
+    (require 'rhtml-mode)
+    (add-to-list 'auto-mode-alist '("\\.erb$" . rhtml-mode))
+  #+end_src
+
+* Lisp
+
+** Default Lisp
+   Prelude uses Clozure as the default implementation, so I'll use that until it
+   gives me problems.
+  #+begin_src emacs-lisp
+    (setq inferior-lisp-program "ccl")
+  #+end_src
+   
+** Slime
+  #+begin_src emacs-lisp
+    (load (expand-file-name "~/quicklisp/slime-helper.el"))
+    (slime-setup '(slime-fancy))
+    (setq slime-use-autodoc-mode nil)
+  #+end_src
+** Paredit
+  #+begin_src emacs-lisp
+
+    (require 'paredit)
+    (autoload 'paredit-mode "paredit"
+      "Minor mode for pseudo-structurally editing Lisp code." t)
+    (add-hook 'emacs-lisp-mode-hook       (lambda () (paredit-mode +1)))
+    (add-hook 'lisp-mode-hook             (lambda () (paredit-mode +1)))
+    (add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode +1)))
+    (add-hook 'scheme-mode-hook           (lambda () (paredit-mode +1)))
+    (add-hook 'clojure-mode-hook          (lambda () (paredit-mode +1)))
+    (add-hook 'nrepl-mode-hook            (lambda () (paredit-mode +1)))
+    (add-hook 'slime-mode-hook            (lambda () (paredit-mode +1)))
+    (add-hook 'ielm-mode-hook             (lambda () (paredit-mode +1)))
+    
+    
+    (provide 'lisp-config)
+    
+  #+end_src
+
+** Scheme
+
+* eShell
+  #+begin_src emacs-lisp
+
+    (setq eshell-cmpl-ignore-case t)
+    (defadvice ansi-term (after advise-ansi-term-coding-system)
+      (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
+    (ad-activate 'ansi-term)
+
+  #+end_src
+
+* Projectile
+
+  #+begin_src emacs-lisp
+     (projectile-global-mode t)
+  #+end_src
+
+* eVIl
+
+  #+begin_src emacs-lisp
+    (add-to-list 'load-path
+                 "~/elisp/evil/evil")
+    (add-to-list 'load-path
+                 "~/elisp/evil/evil-leader")
+    (add-to-list 'load-path
+                 "~/elisp/evil/evil-numbers")
+    (add-to-list 'load-path
+                 "~/elisp/evil/evil-rails")
+    (add-to-list 'load-path
+                 "~/elisp/evil/evil-surround")
+    (require 'evil)
+    (require 'evil-leader)
+    
+  #+end_src
+
+** Evil Leader Bindings
+  #+begin_src emacs-lisp
+    (evil-leader/set-leader ",")
+    (evil-leader/set-key
+      "f" 'ffip
+      "b" 'ido-switch-buffer
+      "d" 'dired
+      "g" 'find-file
+      "x" 'smex
+      )
+    
+  #+end_src
+
+* Key Bindings
+
+    #+begin_src emacs-lisp
+      (global-set-key (kbd "C-c s s") 'eshell)
+      (global-set-key (kbd "C-x C-b") 'ibuffer)
+    #+end_src
