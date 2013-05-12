@@ -8,8 +8,6 @@ Setup package
    #+begin_src emacs-lisp
      (require 'package)
      (add-to-list 'package-archives
-                  '("marmalade" . "http://marmalade-repo.org/packages/"))
-     (add-to-list 'package-archives
                   '("melpa" . "http://melpa.milkbox.net/packages/") t)
      (package-initialize)
      (package-refresh-contents)
@@ -19,12 +17,15 @@ Setup package
 
 This is a list of all of the packages that I use.
    #+begin_src emacs-lisp
-     (setq my-packages '(pallet starter-kit starter-kit-bindings starter-kit-eshell
-                                 starter-kit-js starter-kit-ruby starter-kit-lisp
-                                 auto-complete ac-nrepl cyberpunk-theme pretty-mode
-                                 rvm rsense paredit geiser projectile helm
-                                 helm-projectile yasnippet yasnippet-bundle 
-                                 coffee-mode mmm-mode))
+     (setq *my-packages* '(pallet auto-complete ac-nrepl cyberpunk-theme
+                                  pretty-mode rvm rsense paredit
+                                  geiser projectile helm helm-projectile
+                                  yasnippet yasnippet-bundle
+                                  coffee-mode mmm-mode key-chord
+                                  starter-kit starter-kit-bindings
+                                  starter-kit-eshell starter-kit-js
+                                  starter-kit-ruby starter-kit-lisp
+                                  zenburn-theme robe rubocop))
    #+end_src
 
 ** Personal Utilities
@@ -45,8 +46,8 @@ in sync.
         (progn
         (require-package (car packages))
         (install-my-packages (cdr packages)))))
-    
-    (install-my-packages my-packages)
+
+    (install-my-packages *my-packages*)
   #+end_src
 
 
@@ -58,19 +59,27 @@ in sync.
       (setq auth-sources '("~/.authinfo.gpg"))
   #+end_src
 
+* Jabber
+  #+begin_src emacs-lisp
+    (add-to-list 'load-path "~/elisp/emacs-jabber")
+    (require 'jabber-autoloads)
+  #+end_src
 * Style
 
   #+begin_src emacs-lisp
-    (load-theme 'cyberpunk t)
+    ;;(load-theme 'cyberpunk t)
+    (load-theme 'zenburn t)
     (require 'pretty-mode)
     (global-pretty-mode t)
     (ido-mode t)
     (set-face-attribute 'default nil :height 140)
+
     (setq tab-width 2)
   #+end_src
 * AutoComplete
 
   #+begin_src emacs-lisp
+    (helm-mode 1)
     (require 'auto-complete)
     (add-to-list 'ac-dictionary-directories "~/elisp/ac-dict/"
                  "~/.emacs.d/elpa/auto-complete-20120330.1836/dict/")
@@ -79,7 +88,12 @@ in sync.
     (auto-complete-mode t)
   #+end_src
 
+* JavaScript
 
+** CoffeeScript
+  #+begin_src emacs-lisp
+    (setq coffee-tab-width 2)
+  #+end_src
 * Ruby
 
   #+begin_src emacs-lisp
@@ -87,14 +101,16 @@ in sync.
     (require 'rsense)
     (require 'inf-ruby)
     (rvm-use-default)
-    
+    (add-hook 'ruby-mode-hook 'robe-mode)
+    (add-hook 'ruby-mode-hook 'inf-ruby-setup-keybindings)
+    (push 'ac-source-robe ac-sources)
     (add-hook 'ruby-mode-hook
               (lambda () (rvm-activate-corresponding-ruby)))
     (autoload 'inf-ruby-setup-keybindings "inf-ruby" "" t)
     (autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
     (eval-after-load 'ruby-mode
       '(add-hook 'ruby-mode-hook 'inf-ruby-setup-keybindings))
-    
+
     ;; Stupid Fixes
     (setq last-command-char last-command-event)
     ;;(setq inf-ruby-keys inf-ruby-setup-keybindings)
@@ -104,12 +120,13 @@ in sync.
 ** Rails
   #+begin_src emacs-lisp
     (require 'mmm-auto)
-    
-    
+    (require 'rinari)
+    (rinari-launch)
     
     (add-to-list 'load-path "~/.emacs.d/rhtml")
     (require 'rhtml-mode)
     (add-to-list 'auto-mode-alist '("\\.erb$" . rhtml-mode))
+    
   #+end_src
 
 * Lisp
@@ -120,7 +137,7 @@ in sync.
   #+begin_src emacs-lisp
     (setq inferior-lisp-program "ccl")
   #+end_src
-   
+
 ** Slime
   #+begin_src emacs-lisp
     (load (expand-file-name "~/quicklisp/slime-helper.el"))
@@ -141,10 +158,10 @@ in sync.
     (add-hook 'nrepl-mode-hook            (lambda () (paredit-mode +1)))
     (add-hook 'slime-mode-hook            (lambda () (paredit-mode +1)))
     (add-hook 'ielm-mode-hook             (lambda () (paredit-mode +1)))
-    
-    
+
+
     (provide 'lisp-config)
-    
+
   #+end_src
 
 ** Scheme
@@ -180,7 +197,7 @@ in sync.
                  "~/elisp/evil/evil-surround")
     (require 'evil)
     (require 'evil-leader)
-    
+
   #+end_src
 
 ** Evil Leader Bindings
@@ -193,7 +210,7 @@ in sync.
       "g" 'find-file
       "x" 'smex
       )
-    
+
   #+end_src
 
 * Key Bindings
@@ -201,4 +218,23 @@ in sync.
     #+begin_src emacs-lisp
       (global-set-key (kbd "C-c s s") 'eshell)
       (global-set-key (kbd "C-x C-b") 'ibuffer)
+      
     #+end_src
+
+* Key Chords
+
+  #+begin_src emacs-lisp
+    (require 'key-chord)
+    
+    ;;(iswitchb-mode 1)
+    ;;(key-chord-define-global "BB" 'iswitchb-buffer)
+    
+    (key-chord-define-global "FF" 'find-file)
+    (key-chord-define-global "qf" 'projectile-find-file)
+    (key-chord-define-global "qb" 'ido-switch-buffer)
+    (key-chord-define-global "qh" 'helm-mini)
+    
+    (key-chord-define-global "jk" 'beginning-of-buffer)
+    
+    (key-chord-mode +1)
+  #+end_src
