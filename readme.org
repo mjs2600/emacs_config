@@ -125,8 +125,11 @@ in sync.
     
     (add-to-list 'load-path "~/.emacs.d/rhtml")
     (require 'rhtml-mode)
+    (add-hook 'rhtml-mode-hook
+              (lambda () (rinari-launch)))
     (add-to-list 'auto-mode-alist '("\\.erb$" . rhtml-mode))
-    
+    (add-hook 'rinari-minor-mode-hook
+              (lambda () (setq dash-at-point-docset "rails")))
   #+end_src
 
 * Lisp
