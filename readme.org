@@ -50,7 +50,6 @@ in sync.
     (install-my-packages *my-packages*)
   #+end_src
 
-
 * Personal Information
 
   #+begin_src emacs-lisp
@@ -59,11 +58,32 @@ in sync.
       (setq auth-sources '("~/.authinfo.gpg"))
   #+end_src
 
-* Jabber
-  #+begin_src emacs-lisp
-    (add-to-list 'load-path "~/elisp/emacs-jabber")
-    (require 'jabber-autoloads)
-  #+end_src
+* Social
+** Jabber
+   #+begin_src emacs-lisp
+     (add-to-list 'load-path "~/elisp/emacs-jabber")
+     (require 'jabber-autoloads)
+     
+     (setq jabber-account-list
+           '(("mjs2600@gmail.com" 
+              (:network-server . "talk.google.com")
+              (:connection-type . ssl))
+             ("mike.simpson@scimedsolutions.com" 
+              (:network-server . "talk.google.com")
+              (:connection-type . ssl))))
+     
+     (setq jabber-auto-reconnect nil)
+     (setq jabber-vcard-avatars-retrieve nil)
+     (setq jabber-mode-line-mode t)
+     (setq jabber-show-offline-contacts nil)
+   #+end_src
+
+** ERC
+
+** Twitter
+   #+begin_src emacs-lisp
+     (require 'twittering-mode)
+   #+end_src
 * Style
 
   #+begin_src emacs-lisp
