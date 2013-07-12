@@ -108,6 +108,11 @@ in sync.
     (auto-complete-mode t)
   #+end_src
 
+* Haskell
+  #+begin_src emacs-lisp
+    (custom-set-variables
+     '(haskell-mode-hook '(turn-on-haskell-indentation)))
+  #+end_src
 * JavaScript
 
 ** CoffeeScript
