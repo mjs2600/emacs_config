@@ -135,11 +135,15 @@ in sync.
     (autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
     (eval-after-load 'ruby-mode
       '(add-hook 'ruby-mode-hook 'inf-ruby-setup-keybindings))
-
+    
     ;; Stupid Fixes
     (setq last-command-char last-command-event)
     ;;(setq inf-ruby-keys inf-ruby-setup-keybindings)
+    
+    (add-to-list 'load-path "~/.emacs.d/packages/mactag")
+    (require 'mactag)
   #+end_src
+
 
 
 ** Rails
