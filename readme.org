@@ -249,6 +249,7 @@ in sync.
 
     #+begin_src emacs-lisp
       (global-set-key (kbd "C-c s s") 'eshell)
+      (global-set-key (kbd "C-c f") 'ffip)
       (global-set-key (kbd "C-x C-b") 'ibuffer)
       
     #+end_src
