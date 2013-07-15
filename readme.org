@@ -88,6 +88,7 @@ in sync.
 
   #+begin_src emacs-lisp
     ;;(load-theme 'cyberpunk t)
+    (global-auto-revert-mode t)
     (load-theme 'zenburn t)
     (require 'pretty-mode)
     (global-pretty-mode t)
