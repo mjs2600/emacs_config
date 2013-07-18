@@ -25,7 +25,8 @@ This is a list of all of the packages that I use.
                                   starter-kit starter-kit-bindings
                                   starter-kit-eshell starter-kit-js
                                   starter-kit-ruby starter-kit-lisp
-                                  zenburn-theme robe rubocop))
+                                  zenburn-theme robe rubocop elixir-mode
+                                  elixir-mix))
    #+end_src
 
 ** Personal Utilities
@@ -108,6 +109,8 @@ in sync.
     (ac-config-default)
     (auto-complete-mode t)
   #+end_src
+
+* Elixir
 
 * Haskell
   #+begin_src emacs-lisp
