@@ -62,6 +62,7 @@ My Emacs Configuration File
 
 * Social
 ** Jabber
+   IM settings for gmail
    #+begin_src emacs-lisp
      (add-to-list 'load-path "~/elisp/emacs-jabber")
      (require 'jabber-autoloads)
@@ -87,7 +88,7 @@ My Emacs Configuration File
      (require 'twittering-mode)
    #+end_src
 * Style
-
+  This section is for things like font size and color theme settings.
   #+begin_src emacs-lisp
     ;;(load-theme 'cyberpunk t)
     (global-auto-revert-mode t)
