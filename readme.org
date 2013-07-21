@@ -3,7 +3,7 @@ My Emacs Configuration File
 * Utilities
 
 ** Package
-Setup package
+   Setup package
 
    #+begin_src emacs-lisp
      (require 'package)
@@ -15,7 +15,8 @@ Setup package
 
 ** Packages
 
-This is a list of all of the packages that I use.
+   This is a list of all of the packages that I use.
+
    #+begin_src emacs-lisp
      (setq *my-packages* '(pallet auto-complete ac-nrepl cyberpunk-theme
                                   pretty-mode rvm rsense paredit
@@ -30,9 +31,9 @@ This is a list of all of the packages that I use.
    #+end_src
 
 ** Personal Utilities
-I use this function to make sure that all of my dependencies are installed
-before I try to configure them. I do this to ensure that my computers are kept
-in sync.
+   I use this function to make sure that all of my dependencies are installed
+   before I try to configure them. I do this to ensure that my computers are kept
+   in sync.
   #+begin_src emacs-lisp
     (defun require-package (package-name)
       "Manages my .emacs dependencies"
