@@ -109,6 +109,7 @@ My Emacs Configuration File
     (require 'auto-complete-config)
     (ac-config-default)
     (auto-complete-mode t)
+    (global-auto-complete-mode t)
   #+end_src
 
 * Elixir
