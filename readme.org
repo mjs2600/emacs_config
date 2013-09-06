@@ -169,6 +169,7 @@ My Emacs Configuration File
     
     (add-to-list 'load-path "~/.emacs.d/packages/mactag")
     (require 'mactag)
+    (setq scss-compile-at-save nil)
   #+end_src
 
 
