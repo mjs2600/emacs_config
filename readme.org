@@ -9,7 +9,8 @@ My Emacs Configuration File
      (require 'package)
      (add-to-list 'package-archives
                   '("melpa" . "http://melpa.milkbox.net/packages/") t)
-     (package-initialize)
+     (add-to-list 'load-path "~/elisp/package/")
+     (require 'package+)
      (package-refresh-contents)
    #+end_src
 
@@ -18,16 +19,34 @@ My Emacs Configuration File
    This is a list of all of the packages that I use.
 
    #+begin_src emacs-lisp
-     (setq *my-packages* '(pallet auto-complete ac-nrepl cyberpunk-theme
-                                  pretty-mode rvm rsense paredit
-                                  geiser projectile helm helm-projectile
-                                  yasnippet yasnippet-bundle
-                                  coffee-mode mmm-mode key-chord
-                                  starter-kit starter-kit-bindings
-                                  starter-kit-eshell starter-kit-js
-                                  starter-kit-ruby starter-kit-lisp
-                                  zenburn-theme robe rubocop elixir-mode
-                                  elixir-mix))
+     (package-manifest 'auto-complete
+                       'ac-nrepl
+                       'cyberpunk-theme
+                       'pretty-mode
+                       'rvm
+                       'rsense
+                       'paredit
+                       'geiser
+                       'projectile
+                       'helm
+                       'helm-projectile
+                       'yasnippet
+                       'yasnippet-bundle
+                       'coffee-mode
+                       'mmm-mode
+                       'key-chord
+                       'starter-kit
+                       'starter-kit-bindings
+                       'starter-kit-eshell
+                       'starter-kit-js
+                       'starter-kit-ruby
+                       'starter-kit-lisp
+                       'zenburn-theme
+                       'robe
+                       'rubocop
+                       'elixir-mode
+                       'elixir-mix
+                       'haskell-mode)
    #+end_src
 
 ** Personal Utilities

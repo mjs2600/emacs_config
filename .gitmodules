@@ -7,3 +7,6 @@
 [submodule "evil"]
 	path = evil
 	url = ./evil/
+[submodule "package"]
+	path = package
+	url = https://github.com/zenspider/package.git
