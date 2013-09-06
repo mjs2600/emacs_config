@@ -69,6 +69,7 @@ My Emacs Configuration File
         (install-my-packages (cdr packages)))))
 
     (install-my-packages *my-packages*)
+    (windmove-default-keybindings)
   #+end_src
 
 * Personal Information
