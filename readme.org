@@ -264,7 +264,7 @@ My Emacs Configuration File
   #+begin_src emacs-lisp
     (evil-leader/set-leader ",")
     (evil-leader/set-key
-      "f" 'ffip
+      "f" 'projectile-find-file
       "b" 'ido-switch-buffer
       "d" 'dired
       "g" 'find-file
