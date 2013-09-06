@@ -131,6 +131,9 @@ My Emacs Configuration File
     (ac-config-default)
     (auto-complete-mode t)
     (global-auto-complete-mode t)
+
+    (icomplete-mode 0)
+    (ido-ubiquitous 1)
   #+end_src
 
 * Elixir
