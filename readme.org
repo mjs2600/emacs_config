@@ -49,29 +49,6 @@ My Emacs Configuration File
                        'haskell-mode)
    #+end_src
 
-** Personal Utilities
-   I use this function to make sure that all of my dependencies are installed
-   before I try to configure them. I do this to ensure that my computers are kept
-   in sync.
-  #+begin_src emacs-lisp
-    (defun require-package (package-name)
-      "Manages my .emacs dependencies"
-      (interactive)
-      (message "Checking for %s." package-name)
-      (unless (package-installed-p package-name)
-        (message "Installing %s." package-name)
-        (package-install package-name)))
-
-    (defun install-my-packages (packages)
-      (if packages
-        (progn
-        (require-package (car packages))
-        (install-my-packages (cdr packages)))))
-
-    (install-my-packages *my-packages*)
-    (windmove-default-keybindings)
-  #+end_src
-
 * Personal Information
 
   #+begin_src emacs-lisp
@@ -283,6 +260,7 @@ My Emacs Configuration File
       (global-set-key (kbd "C-c f") 'ffip)
       (global-set-key (kbd "C-x C-b") 'ibuffer)
       (global-set-key (kbd "C-*") 'evil-search-symbol-forward)
+      (windmove-default-keybindings)
     #+end_src
 
 * Key Chords
