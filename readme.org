@@ -21,32 +21,39 @@ My Emacs Configuration File
    #+begin_src emacs-lisp
      (package-manifest 'auto-complete
                        'ac-nrepl
+                       'ag
                        'cyberpunk-theme
                        'pretty-mode
                        'rvm
                        'rsense
                        'paredit
+                       'findr
                        'geiser
                        'projectile
                        'helm
                        'helm-projectile
+                       'inflections
                        'yasnippet
                        'yasnippet-bundle
                        'coffee-mode
                        'mmm-mode
                        'key-chord
+                       'rhtml-mode
+                       'rinari
                        'starter-kit
                        'starter-kit-bindings
                        'starter-kit-eshell
                        'starter-kit-js
                        'starter-kit-ruby
                        'starter-kit-lisp
+                       'twittering-mode
                        'zenburn-theme
                        'robe
                        'rubocop
                        'elixir-mode
                        'elixir-mix
-                       'haskell-mode)
+                       'haskell-mode
+                       'elfeed)
    #+end_src
 
 * Personal Information
