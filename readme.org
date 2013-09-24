@@ -75,7 +75,8 @@ My Emacs Configuration File
              "http://xkcd.com/rss.xml"
              "http://feeds.feedburner.com/Lessig?format=xmlford.edu/lessig/blog/index.rdf"
              "https://www.eff.org/rss/updates.xml"
-             "http://planet.emacsen.org/atom.xml"))
+             "http://planet.emacsen.org/atom.xml"
+             "http://blog.fogus.me/tag/readevalprintlove/feed/"))
    #+end_src
 
 ** Jabber
