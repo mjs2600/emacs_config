@@ -26,6 +26,7 @@ My Emacs Configuration File
                        'ghc
                        'ghci-completion
                        'pretty-mode
+                       'jabber
                        'rvm
                        'rsense
                        'paredit
@@ -82,8 +83,7 @@ My Emacs Configuration File
 ** Jabber
    IM settings for gmail
    #+begin_src emacs-lisp
-     (add-to-list 'load-path "~/elisp/emacs-jabber")
-     (require 'jabber-autoloads)
+     ;(require 'jabber)
      
      (setq jabber-account-list
            '(("mjs2600@gmail.com" 
@@ -175,8 +175,6 @@ My Emacs Configuration File
     (setq last-command-char last-command-event)
     ;;(setq inf-ruby-keys inf-ruby-setup-keybindings)
     
-    (add-to-list 'load-path "~/.emacs.d/packages/mactag")
-    (require 'mactag)
     (setq scss-compile-at-save nil)
   #+end_src
 
@@ -253,31 +251,31 @@ My Emacs Configuration File
 * eVIl
 
   #+begin_src emacs-lisp
-    (add-to-list 'load-path
-                 "~/elisp/evil/evil")
-    (add-to-list 'load-path
-                 "~/elisp/evil/evil-leader")
-    (add-to-list 'load-path
-                 "~/elisp/evil/evil-numbers")
-    (add-to-list 'load-path
-                 "~/elisp/evil/evil-rails")
-    (add-to-list 'load-path
-                 "~/elisp/evil/evil-surround")
-    (require 'evil)
-    (require 'evil-leader)
-
+    ;(add-to-list 'load-path
+    ;             "~/elisp/evil/evil")
+    ;(add-to-list 'load-path
+    ;             "~/elisp/evil/evil-leader")
+    ;(add-to-list 'load-path
+    ;             "~/elisp/evil/evil-numbers")
+    ;(add-to-list 'load-path
+    ;             "~/elisp/evil/evil-rails")
+    ;(add-to-list 'load-path
+    ;             "~/elisp/evil/evil-surround")
+    ;(require 'evil)
+    ;(require 'evil-leader)
+    
   #+end_src
 
 ** Evil Leader Bindings
   #+begin_src emacs-lisp
-    (evil-leader/set-leader ",")
-    (evil-leader/set-key
-      "f" 'projectile-find-file
-      "b" 'ido-switch-buffer
-      "d" 'dired
-      "g" 'find-file
-      "x" 'smex
-      )
+    ;(evil-leader/set-leader ",")
+    ;(evil-leader/set-key
+    ;  "f" 'projectile-find-file
+    ;  "b" 'ido-switch-buffer
+    ;  "d" 'dired
+    ;  "g" 'find-file
+    ;  "x" 'smex
+    ;  )
 
   #+end_src
 
