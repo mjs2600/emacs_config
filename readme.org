@@ -23,6 +23,8 @@ My Emacs Configuration File
                        'ac-nrepl
                        'ag
                        'cyberpunk-theme
+                       'ghc
+                       'ghci-completion
                        'pretty-mode
                        'rvm
                        'rsense
@@ -135,9 +137,15 @@ My Emacs Configuration File
 
 * Haskell
   #+begin_src emacs-lisp
-    (custom-set-variables
-     '(haskell-mode-hook '(turn-on-haskell-indentation)))
+    (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+    (add-hook 'haskell-mode-hook 'haskell-flymake-init)
+    (add-hook 'haskell-mode-hook 'flymake-hlint-load)
+    (add-hook 'haskell-mode-hook 'ghci-completion-mode)
+    (add-hook 'haskell-mode-hook 'flymake-haskell-multi-load)
+    
+    (add-hook 'inferior-haskell-mode-hook 'ghci-completion-mode)
   #+end_src
+
 * JavaScript
 
 ** CoffeeScript
