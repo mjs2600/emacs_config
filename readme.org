@@ -1,7 +1,6 @@
 My Emacs Configuration File
 
 * Utilities
-
 ** Package
    Setup package
 
@@ -23,6 +22,8 @@ My Emacs Configuration File
                        'ac-nrepl
                        'ag
                        'cyberpunk-theme
+                       'evil
+                       'evil-leader
                        'ghc
                        'ghci-completion
                        'pretty-mode
@@ -55,6 +56,7 @@ My Emacs Configuration File
                        'rubocop
                        'elixir-mode
                        'elixir-mix
+                       'elixir-yasnippets
                        'haskell-mode
                        'elfeed)
    #+end_src
@@ -261,21 +263,20 @@ My Emacs Configuration File
     ;             "~/elisp/evil/evil-rails")
     ;(add-to-list 'load-path
     ;             "~/elisp/evil/evil-surround")
-    ;(require 'evil)
-    ;(require 'evil-leader)
-    
+    (require 'evil)
+    (require 'evil-leader)
   #+end_src
 
 ** Evil Leader Bindings
   #+begin_src emacs-lisp
-    ;(evil-leader/set-leader ",")
-    ;(evil-leader/set-key
-    ;  "f" 'projectile-find-file
-    ;  "b" 'ido-switch-buffer
-    ;  "d" 'dired
-    ;  "g" 'find-file
-    ;  "x" 'smex
-    ;  )
+    (evil-leader/set-leader ",")
+    (evil-leader/set-key
+      "f" 'projectile-find-file
+      "b" 'ido-switch-buffer
+      "d" 'dired
+      "g" 'find-file
+      "x" 'smex
+      )
 
   #+end_src
 
