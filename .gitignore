@@ -1,2 +1,9 @@
 emacs.el
 /readme.el
+.cask/
+backups/
+ac-comphist.dat
+.smex-items
+elpa/
+places
+projectile-bookmarks.eld
