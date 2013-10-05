@@ -8,11 +8,10 @@ My Emacs Configuration File
      (require 'package)
      (add-to-list 'package-archives
                   '("melpa" . "http://melpa.milkbox.net/packages/") t)
-     (add-to-list 'load-path "~/elisp/package/")
-     (require 'pallet)
      (package-refresh-contents)
      (require 'cask "~/.cask/cask.el")
      (cask-initialize)
+     (require 'pallet)
    #+end_src
 
 ** Packages

@@ -1,4 +1,4 @@
-;;(add-to-list 'load-path "~/elisp/")
+(add-to-list 'load-path "~/.emacs.d")
 (require 'personal-init)
 ;;(put 'erase-buffer 'disabled nil)
 (custom-set-variables
