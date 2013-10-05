@@ -9,15 +9,16 @@ My Emacs Configuration File
      (add-to-list 'package-archives
                   '("melpa" . "http://melpa.milkbox.net/packages/") t)
      (add-to-list 'load-path "~/elisp/package/")
-     (require 'package+)
+     (require 'pallet)
      (package-refresh-contents)
+     (require 'cask "~/.cask/cask.el")
+     (cask-initialize)
    #+end_src
 
 ** Packages
 
    This is a list of all of the packages that I use.
 
-   #+begin_src emacs-lisp
      (package-manifest 'auto-complete
                        'ac-nrepl
                        'ag
@@ -59,7 +60,6 @@ My Emacs Configuration File
                        'elixir-yasnippets
                        'haskell-mode
                        'elfeed)
-   #+end_src
 
 * Personal Information
 
@@ -265,10 +265,12 @@ My Emacs Configuration File
     ;             "~/elisp/evil/evil-surround")
     (require 'evil)
     (require 'evil-leader)
+    (evil-mode)
   #+end_src
 
 ** Evil Leader Bindings
   #+begin_src emacs-lisp
+    (global-evil-leader-mode t)
     (evil-leader/set-leader ",")
     (evil-leader/set-key
       "f" 'projectile-find-file
