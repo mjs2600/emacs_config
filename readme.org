@@ -14,52 +14,6 @@ My Emacs Configuration File
      (require 'pallet)
    #+end_src
 
-** Packages
-
-   This is a list of all of the packages that I use.
-
-     (package-manifest 'auto-complete
-                       'ac-nrepl
-                       'ag
-                       'cyberpunk-theme
-                       'evil
-                       'evil-leader
-                       'ghc
-                       'ghci-completion
-                       'pretty-mode
-                       'jabber
-                       'rvm
-                       'rsense
-                       'paredit
-                       'findr
-                       'geiser
-                       'projectile
-                       'helm
-                       'helm-projectile
-                       'inflections
-                       'yasnippet
-                       'yasnippet-bundle
-                       'coffee-mode
-                       'mmm-mode
-                       'key-chord
-                       'rhtml-mode
-                       'rinari
-                       'starter-kit
-                       'starter-kit-bindings
-                       'starter-kit-eshell
-                       'starter-kit-js
-                       'starter-kit-ruby
-                       'starter-kit-lisp
-                       'twittering-mode
-                       'zenburn-theme
-                       'robe
-                       'rubocop
-                       'elixir-mode
-                       'elixir-mix
-                       'elixir-yasnippets
-                       'haskell-mode
-                       'elfeed)
-
 * Personal Information
 
   #+begin_src emacs-lisp
