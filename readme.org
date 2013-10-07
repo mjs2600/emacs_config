@@ -277,6 +277,7 @@ My Emacs Configuration File
       "d" 'dired
       "g" 'find-file
       "x" 'smex
+      "t" 'eshell
       )
 
   #+end_src
