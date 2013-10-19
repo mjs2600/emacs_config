@@ -177,16 +177,19 @@ My Emacs Configuration File
     (add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode +1)))
     (add-hook 'scheme-mode-hook           (lambda () (paredit-mode +1)))
     (add-hook 'clojure-mode-hook          (lambda () (paredit-mode +1)))
-    (add-hook 'nrepl-mode-hook            (lambda () (paredit-mode +1)))
     (add-hook 'slime-mode-hook            (lambda () (paredit-mode +1)))
     (add-hook 'ielm-mode-hook             (lambda () (paredit-mode +1)))
-
+    (add-hook 'cider-mode-hook             (lambda () (paredit-mode +1)))
+    (add-hook 'cider-repl-mode-hook             (lambda () (paredit-mode +1)))
 
     (provide 'lisp-config)
 
   #+end_src
 
-** Scheme
+** Clojure
+  #+begin_src emacs-lisp
+    (require 'cider)
+  #+end_src
 
 * eShell
   #+begin_src emacs-lisp
