@@ -1,6 +1,7 @@
 (source "melpa" "http://melpa.milkbox.net/packages/")
 
 (depends-on "4clojure")
+(depends-on "ac-nrepl")
 (depends-on "ag")
 (depends-on "auto-complete")
 (depends-on "cask")
@@ -43,6 +44,7 @@
 (depends-on "pkg-info")
 (depends-on "pretty-mode")
 (depends-on "projectile")
+(depends-on "rainbow-delimiters")
 (depends-on "rhtml-mode")
 (depends-on "rinari")
 (depends-on "robe")
@@ -51,6 +53,7 @@
 (depends-on "ruby-compilation")
 (depends-on "rvm")
 (depends-on "scala-mode2")
+(depends-on "slim-mode")
 (depends-on "smex")
 (depends-on "starter-kit")
 (depends-on "starter-kit-bindings")

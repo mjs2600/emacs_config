@@ -189,6 +189,9 @@ My Emacs Configuration File
 ** Clojure
   #+begin_src emacs-lisp
     (require 'cider)
+    (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+    (setq nrepl-buffer-name-show-port t)
+    (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
   #+end_src
 
 * eShell
