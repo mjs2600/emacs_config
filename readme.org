@@ -223,23 +223,23 @@ My Emacs Configuration File
     ;             "~/elisp/evil/evil-rails")
     ;(add-to-list 'load-path
     ;             "~/elisp/evil/evil-surround")
-    (require 'evil)
-    (require 'evil-leader)
+    ;(require 'evil)
+    ;(require 'evil-leader)
     ;(evil-mode)
   #+end_src
 
 ** Evil Leader Bindings
   #+begin_src emacs-lisp
-    (global-evil-leader-mode t)
-    (evil-leader/set-leader ",")
-    (evil-leader/set-key
-      "f" 'projectile-find-file
-      "b" 'ido-switch-buffer
-      "d" 'dired
-      "g" 'find-file
-      "x" 'smex
-      "t" 'eshell
-      )
+    ;(global-evil-leader-mode t)
+    ;(evil-leader/set-leader ",")
+    ;(evil-leader/set-key
+    ;  "f" 'projectile-find-file
+    ;  "b" 'ido-switch-buffer
+    ;  "d" 'dired
+    ;  "g" 'find-file
+    ;  "x" 'smex
+    ;  "t" 'eshell
+    ;  )
 
   #+end_src
 
@@ -270,4 +270,10 @@ My Emacs Configuration File
     (key-chord-define evil-insert-state-map "kk" 'evil-normal-state)
     
     (key-chord-mode +1)
+  #+end_src
+
+* God-Mode
+  #+begin_src emacs-lisp
+    (global-set-key (kbd "<escape>") 'god-local-mode)
+    (add-to-list 'god-exempt-major-modes 'dired-mode 'magit-mode)
   #+end_src
