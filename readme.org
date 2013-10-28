@@ -91,6 +91,7 @@ My Emacs Configuration File
 
 * Elixir
 
+* Erlang
 * Haskell
   #+begin_src emacs-lisp
     (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
