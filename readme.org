@@ -1,8 +1,11 @@
 My Emacs Configuration File
 
 * Utilities
+
+  These are just some basic utilites to get emacs setup enough to configure.
 ** Packages
-   Setup package and pallet
+   Setup package and pallet. Install Cask and run =cask install=
+   before you start emacs.
 
    #+begin_src emacs-lisp
      (add-to-list 'load-path "~/.emacs.d/elisp/")
@@ -94,6 +97,7 @@ My Emacs Configuration File
 
 * AutoComplete
 
+  Autocompletion, because I don't really want to type entire words.
   #+begin_src emacs-lisp
     (helm-mode 1)
     (require 'auto-complete)
@@ -169,6 +173,8 @@ My Emacs Configuration File
 
 * Lisp
 
+There's some common lisp stuff in here, but this section is mostly
+for Clojure, ELisp, and Racket now.
 ** Default Lisp
    Prelude uses Clozure as the default implementation, so I'll use that until it
    gives me problems.
@@ -211,6 +217,8 @@ My Emacs Configuration File
   #+end_src
 
 * eShell
+  
+  eShell is amazing, but these settings make it better.
   #+begin_src emacs-lisp
 
     (setq eshell-cmpl-ignore-case t)
@@ -237,6 +245,7 @@ My Emacs Configuration File
 
 * Key Chords
 
+
   #+begin_src emacs-lisp
     (require 'key-chord)
     
@@ -249,6 +258,7 @@ My Emacs Configuration File
     (key-chord-define-global "qh" 'helm-mini)
     
     (key-chord-define-global "jk" 'beginning-of-buffer)
+    (key-chord-define-global "jl" 'end-of-buffer)
+
     (key-chord-mode +1)
   #+end_src
-
