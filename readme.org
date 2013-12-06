@@ -97,6 +97,11 @@ My Emacs Configuration File
                            "mplayer")))
    #+end_src
 
+* Games
+   #+begin_src emacs-lisp
+     (require 'gnugo nil 'no-error)
+   #+end_src
+
 * Style
 
   This section is for things like font size and color theme settings.
