@@ -1,7 +1,6 @@
 (source "melpa" "http://melpa.milkbox.net/packages/")
 (source "gnu" "http://elpa.gnu.org/packages/")
 
-(depends-on "4clojure")
 (depends-on "ac-nrepl")
 (depends-on "ace-jump-mode")
 (depends-on "ag")
