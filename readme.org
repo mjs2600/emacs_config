@@ -24,7 +24,7 @@ My Emacs Configuration File
     (setq user-full-name "Michael Simpson")
     (setq user-mail-address "mjs2600@gmail.com")
     (setq auth-sources '("~/.authinfo.gpg"))
-    (defvar password-file "~/.passwords.gpg")
+    (setq password-file "~/.passwords.gpg")
     (and (file-exists-p password-file) (load-file password-file))
   #+end_src
 
@@ -74,7 +74,7 @@ My Emacs Configuration File
   This section is for media settings.
 ** Pandora
    #+begin_src emacs-lisp
-     (defvar pianobar-username "xodis2600@gmail.com")
+     (setq pianobar-username "xodis2600@gmail.com")
      (load-library "pianobar")
      (require 'pianobar)
    #+end_src
