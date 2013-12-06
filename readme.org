@@ -85,6 +85,9 @@ My Emacs Configuration File
      (require 'emms-setup)
      (emms-standard)
      (emms-default-players)
+
+     ;;; Initialize this if it isn't defined.
+     (defvar dired-guess-shell-alist-user nil)
      (add-to-list 'dired-guess-shell-alist-user
                   (list "\\.\\(flac\\|mp3\\|ogg\\|wav\\)\\'"
                         '(if (y-or-n-p "Add to EMMS playlist?")
