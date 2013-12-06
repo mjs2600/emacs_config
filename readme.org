@@ -71,11 +71,13 @@ My Emacs Configuration File
    #+end_src
    
 * Style
+
   This section is for things like font size and color theme settings.
+
   #+begin_src emacs-lisp
-    ;;(load-theme 'cyberpunk t)
+    (load-theme 'cyberpunk t)
+    ;;(load-theme 'zenburn t)
     (global-auto-revert-mode t)
-    (load-theme 'zenburn t)
     (require 'pretty-mode)
     (global-pretty-mode t)
     (ido-mode t)
@@ -83,6 +85,7 @@ My Emacs Configuration File
 
     (setq tab-width 2)
   #+end_src
+
 * AutoComplete
 
   #+begin_src emacs-lisp

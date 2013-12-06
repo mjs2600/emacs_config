@@ -1,5 +1,5 @@
-(source "melpa" "http://melpa.milkbox.net/packages/")
-(source "gnu" "http://elpa.gnu.org/packages/")
+(source melpa)
+(source gnu)
 
 (depends-on "ac-nrepl")
 (depends-on "ace-jump-mode")
@@ -11,6 +11,7 @@
 (depends-on "clojure-mode")
 (depends-on "coffee-mode")
 (depends-on "commander")
+(depends-on "cyberpunk-theme")
 (depends-on "dash")
 (depends-on "dash-at-point")
 (depends-on "elein")
