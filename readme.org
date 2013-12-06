@@ -110,6 +110,17 @@ My Emacs Configuration File
     (setq tab-width 2)
   #+end_src
 
+* Documentation
+
+   #+begin_src emacs-lisp
+     (defun doc-at-point ()
+       "An OS agnostic external documentation lookup function."
+       (interactive)
+       (if (eq system-type 'darwin)
+           (dash-at-point)
+         (zeal-at-point)))
+   #+end_src
+
 * AutoComplete
 
   Autocompletion, because I don't really want to type entire words.
@@ -256,6 +267,7 @@ for Clojure, ELisp, and Racket now.
       (global-set-key (kbd "C-c f") 'ffip)
       (global-set-key (kbd "C-x C-b") 'ibuffer)
       (global-set-key (kbd "C-c r") 'ielm)
+      (global-set-key (kbd "C-c d") 'doc-at-point)
       (windmove-default-keybindings)
     #+end_src
 
