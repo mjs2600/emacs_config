@@ -55,7 +55,6 @@
 (depends-on "rubocop")
 (depends-on "ruby-compilation")
 (depends-on "rvm")
-(depends-on "scala-mode2")
 (depends-on "slim-mode")
 (depends-on "smex")
 (depends-on "starter-kit")

@@ -211,7 +211,6 @@ My Emacs Configuration File
      (projectile-global-mode t)
   #+end_src
 
-
 * Key Bindings
 
     #+begin_src emacs-lisp
@@ -238,8 +237,3 @@ My Emacs Configuration File
     (key-chord-mode +1)
   #+end_src
 
-* God-Mode
-  #+begin_src emacs-lisp
-    (global-set-key (kbd "<escape>") 'god-local-mode)
-    (add-to-list 'god-exempt-major-modes 'dired-mode 'magit-mode)
-  #+end_src
