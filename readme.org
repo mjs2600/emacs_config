@@ -211,38 +211,6 @@ My Emacs Configuration File
      (projectile-global-mode t)
   #+end_src
 
-* eVIl
-
-  #+begin_src emacs-lisp
-    ;(add-to-list 'load-path
-    ;             "~/elisp/evil/evil")
-    ;(add-to-list 'load-path
-    ;             "~/elisp/evil/evil-leader")
-    ;(add-to-list 'load-path
-    ;             "~/elisp/evil/evil-numbers")
-    ;(add-to-list 'load-path
-    ;             "~/elisp/evil/evil-rails")
-    ;(add-to-list 'load-path
-    ;             "~/elisp/evil/evil-surround")
-    ;(require 'evil)
-    ;(require 'evil-leader)
-    ;(evil-mode)
-  #+end_src
-
-** Evil Leader Bindings
-  #+begin_src emacs-lisp
-    ;(global-evil-leader-mode t)
-    ;(evil-leader/set-leader ",")
-    ;(evil-leader/set-key
-    ;  "f" 'projectile-find-file
-    ;  "b" 'ido-switch-buffer
-    ;  "d" 'dired
-    ;  "g" 'find-file
-    ;  "x" 'smex
-    ;  "t" 'eshell
-    ;  )
-
-  #+end_src
 
 * Key Bindings
 
@@ -250,7 +218,6 @@ My Emacs Configuration File
       (global-set-key (kbd "C-c s s") 'eshell)
       (global-set-key (kbd "C-c f") 'ffip)
       (global-set-key (kbd "C-x C-b") 'ibuffer)
-      (global-set-key (kbd "C-*") 'evil-search-symbol-forward)
       (windmove-default-keybindings)
     #+end_src
 
@@ -268,8 +235,6 @@ My Emacs Configuration File
     (key-chord-define-global "qh" 'helm-mini)
     
     (key-chord-define-global "jk" 'beginning-of-buffer)
-    (key-chord-define evil-insert-state-map "kk" 'evil-normal-state)
-    
     (key-chord-mode +1)
   #+end_src
 
