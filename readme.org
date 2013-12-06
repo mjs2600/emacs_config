@@ -1,8 +1,8 @@
 My Emacs Configuration File
 
 * Utilities
-** Package
-   Setup package
+** Packages
+   Setup package and pallet
 
    #+begin_src emacs-lisp
      (require 'package)
@@ -91,7 +91,6 @@ My Emacs Configuration File
 
 * Elixir
 
-* Erlang
 * Haskell
   #+begin_src emacs-lisp
     (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
