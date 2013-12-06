@@ -63,7 +63,6 @@
 (depends-on "starter-kit-lisp")
 (depends-on "starter-kit-ruby")
 (depends-on "twittering-mode")
-(depends-on "web-mode")
 (depends-on "yaml-mode")
 (depends-on "yasnippet")
 (depends-on "zenburn-theme")

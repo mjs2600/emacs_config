@@ -142,7 +142,6 @@ My Emacs Configuration File
     (require 'rinari)
     (rinari-launch)
     
-    (add-to-list 'load-path "~/.emacs.d/rhtml")
     (require 'rhtml-mode)
     (add-hook 'rhtml-mode-hook
               (lambda () (rinari-launch)))
