@@ -5,6 +5,7 @@ My Emacs Configuration File
    Setup package and pallet
 
    #+begin_src emacs-lisp
+     (add-to-list 'load-path "~/.emacs.d/elisp/")
      (require 'package)
      (add-to-list 'package-archives
                   '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -60,6 +61,15 @@ My Emacs Configuration File
    #+begin_src emacs-lisp
      (require 'twittering-mode)
    #+end_src
+
+* Media
+
+** Pandora
+   #+begin_src emacs-lisp
+     (load-library "pianobar")
+     (require 'pianobar)
+   #+end_src
+   
 * Style
   This section is for things like font size and color theme settings.
   #+begin_src emacs-lisp
