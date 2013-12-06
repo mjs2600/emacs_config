@@ -255,6 +255,7 @@ for Clojure, ELisp, and Racket now.
       (global-set-key (kbd "C-c s s") 'eshell)
       (global-set-key (kbd "C-c f") 'ffip)
       (global-set-key (kbd "C-x C-b") 'ibuffer)
+      (global-set-key (kbd "C-c r") 'ielm)
       (windmove-default-keybindings)
     #+end_src
 
