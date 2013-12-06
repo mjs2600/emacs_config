@@ -79,6 +79,21 @@ My Emacs Configuration File
      (require 'pianobar)
    #+end_src
    
+** EMMS
+
+   #+begin_src emacs-lisp
+     (require 'emms-setup)
+     (emms-standard)
+     (emms-default-players)
+     (add-to-list 'dired-guess-shell-alist-user
+                  (list "\\.\\(flac\\|mp3\\|ogg\\|wav\\)\\'"
+                        '(if (y-or-n-p "Add to EMMS playlist?")
+                             (progn (emms-add-file (dired-get-filename))
+                                    (emms)
+                                    (keyboard-quit))
+                           "mplayer")))
+   #+end_src
+
 * Style
 
   This section is for things like font size and color theme settings.
