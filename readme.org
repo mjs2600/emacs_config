@@ -89,8 +89,6 @@ My Emacs Configuration File
     (ido-ubiquitous 1)
   #+end_src
 
-* Elixir
-
 * Haskell
   #+begin_src emacs-lisp
     (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
