@@ -20,6 +20,7 @@
 (depends-on "elixir-mix")
 (depends-on "elixir-mode")
 (depends-on "elixir-yasnippets")
+(depends-on "elnode")
 (depends-on "emms")
 (depends-on "enh-ruby-mode")
 (depends-on "epl")
