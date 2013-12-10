@@ -42,6 +42,7 @@
 (depends-on "inf-ruby")
 (depends-on "inflections")
 (depends-on "jabber")
+(depends-on "js2-mode")
 (depends-on "jump")
 (depends-on "key-chord")
 (depends-on "magit")
