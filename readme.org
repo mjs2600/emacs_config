@@ -284,7 +284,6 @@ for Clojure, ELisp, and Racket now.
 * Key Bindings
 
     #+begin_src emacs-lisp
-      (global-set-key (kbd "C-c s s") 'eshell)
       (global-set-key (kbd "C-c f") 'ffip)
       (global-set-key (kbd "C-x C-b") 'ibuffer)
       (global-set-key (kbd "C-c r") 'ielm)
