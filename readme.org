@@ -289,6 +289,7 @@ for Clojure, ELisp, and Racket now.
       (global-set-key (kbd "C-c r") 'ielm)
       (global-set-key (kbd "C-c d") 'doc-at-point)
       (global-set-key (kbd "C-c h") 'my-helm)
+      (global-set-key (kbd "C-c a") 'ace-jump-mode)
       (windmove-default-keybindings)
     #+end_src
 
