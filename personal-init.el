@@ -7,6 +7,9 @@
 
 (require 'org)
 (org-babel-load-file "~/.emacs.d/readme.org")
+(let ((compiled-elisp "~/.emacs.d/readme.el"))
+  (if (file-exists-p compiled-elisp)
+      (delete-file compiled-elisp)))
 
 ;(require 'rss-config)
 ;(require 'social-config)
