@@ -1,6 +1,7 @@
 (source melpa)
 (source gnu)
 
+(depends-on "4clojure")
 (depends-on "ac-nrepl")
 (depends-on "ace-jump-mode")
 (depends-on "ag")
@@ -10,6 +11,7 @@
 (depends-on "cider")
 (depends-on "cljsbuild-mode")
 (depends-on "clojure-mode")
+(depends-on "clojure-snippets")
 (depends-on "coffee-mode")
 (depends-on "commander")
 (depends-on "cyberpunk-theme")
