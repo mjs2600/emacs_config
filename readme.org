@@ -129,11 +129,24 @@ My Emacs Configuration File
          (zeal-at-point)))
    #+end_src
 
+* Helm
+  #+begin_src emacs-lisp
+    (helm-mode 1)
+    (defun my-helm ()
+      "Preconfigured `helm' lightweight version \(buffer -> recentf\)."
+      (interactive)
+      (require 'helm-files)
+      (let ((helm-ff-transformer-show-only-basename nil))
+        (helm-other-buffer '(helm-source-buffers-list
+                             helm-source-recentf
+                             helm-source-buffer-not-found)
+                           "*Helm*")))
+  #+end_src
+
 * AutoComplete
 
   Autocompletion, because I don't really want to type entire words.
   #+begin_src emacs-lisp
-    (helm-mode 1)
     (require 'auto-complete)
     (add-to-list 'ac-dictionary-directories "~/elisp/ac-dict/"
                  "~/.emacs.d/elpa/auto-complete-20120330.1836/dict/")
@@ -173,6 +186,7 @@ My Emacs Configuration File
     (rvm-use-default)
     (rvm-autodetect-ruby)
     (add-hook 'ruby-mode-hook 'rubocop-mode)
+    (add-hook 'ruby-mode-hook 'rspec-mode)
     (add-hook 'ruby-mode-hook (lambda () (add-hook
                                           'after-save-hook
                                           'rubocop-check-current-file
@@ -271,11 +285,12 @@ for Clojure, ELisp, and Racket now.
 * Key Bindings
 
     #+begin_src emacs-lisp
-      (global-set-key (kbd "C-c s s") 'eshell)
       (global-set-key (kbd "C-c f") 'ffip)
       (global-set-key (kbd "C-x C-b") 'ibuffer)
       (global-set-key (kbd "C-c r") 'ielm)
       (global-set-key (kbd "C-c d") 'doc-at-point)
+      (global-set-key (kbd "C-c h") 'my-helm)
+      (global-set-key (kbd "C-c a") 'ace-jump-mode)
       (windmove-default-keybindings)
     #+end_src
 
