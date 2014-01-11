@@ -186,6 +186,7 @@ My Emacs Configuration File
     (rvm-use-default)
     (rvm-autodetect-ruby)
     (add-hook 'ruby-mode-hook 'rubocop-mode)
+    (add-hook 'ruby-mode-hook 'rspec-mode)
     (add-hook 'ruby-mode-hook (lambda () (add-hook
                                           'after-save-hook
                                           'rubocop-check-current-file
