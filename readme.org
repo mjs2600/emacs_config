@@ -129,6 +129,11 @@ My Emacs Configuration File
          (zeal-at-point)))
    #+end_src
 
+* Org
+   #+begin_src emacs-lisp
+     (setq org-list-allow-alphabetical t)
+   #+end_src
+
 * Helm
   #+begin_src emacs-lisp
     (helm-mode 1)
