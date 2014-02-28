@@ -47,15 +47,15 @@ My Emacs Configuration File
    IM settings for gmail
    #+begin_src emacs-lisp
      ;(require 'jabber)
-     
+
      (setq jabber-account-list
-           '(("mjs2600@gmail.com" 
+           '(("mjs2600@gmail.com"
               (:network-server . "talk.google.com")
               (:connection-type . ssl))
-             ("mike.simpson@scimedsolutions.com" 
+             ("mike.simpson@scimedsolutions.com"
               (:network-server . "talk.google.com")
               (:connection-type . ssl))))
-     
+
      (setq jabber-auto-reconnect nil)
      (setq jabber-vcard-avatars-retrieve nil)
      (setq jabber-mode-line-mode t)
@@ -78,7 +78,7 @@ My Emacs Configuration File
      (load-library "pianobar")
      (require 'pianobar)
    #+end_src
-   
+
 ** EMMS
 
    #+begin_src emacs-lisp
@@ -117,6 +117,11 @@ My Emacs Configuration File
     (set-face-attribute 'default nil :height 140)
 
     (setq tab-width 2)
+  #+end_src
+
+  Delete trailing whitespace by default.
+  #+begin_src emacs-lisp
+    (add-hook 'before-save-hook 'delete-trailing-whitespace)
   #+end_src
 
 * Documentation
@@ -172,7 +177,7 @@ My Emacs Configuration File
     (add-hook 'haskell-mode-hook 'flymake-hlint-load)
     (add-hook 'haskell-mode-hook 'ghci-completion-mode)
     (add-hook 'haskell-mode-hook 'flymake-haskell-multi-load)
-    
+
     (add-hook 'inferior-haskell-mode-hook 'ghci-completion-mode)
   #+end_src
 
@@ -207,7 +212,7 @@ My Emacs Configuration File
     ;; Stupid Fixes
     (setq last-command-char last-command-event)
     ;;(setq inf-ruby-keys inf-ruby-setup-keybindings)
-    
+
     (setq scss-compile-at-save nil)
   #+end_src
 
@@ -216,7 +221,7 @@ My Emacs Configuration File
     (require 'mmm-auto)
     (require 'rinari)
     (rinari-launch)
-    
+
     (require 'rhtml-mode)
     (add-hook 'rhtml-mode-hook
               (lambda () (rinari-launch)))
@@ -271,7 +276,7 @@ for Clojure, ELisp, and Racket now.
   #+end_src
 
 * eShell
-  
+
   eShell is amazing, but these settings make it better.
   #+begin_src emacs-lisp
 
@@ -305,15 +310,15 @@ for Clojure, ELisp, and Racket now.
 
   #+begin_src emacs-lisp
     (require 'key-chord)
-    
+
     ;;(iswitchb-mode 1)
     ;;(key-chord-define-global "BB" 'iswitchb-buffer)
-    
+
     (key-chord-define-global "FF" 'find-file)
     (key-chord-define-global "qf" 'projectile-find-file)
     (key-chord-define-global "qb" 'ido-switch-buffer)
     (key-chord-define-global "qh" 'helm-mini)
-    
+
     (key-chord-define-global "jk" 'beginning-of-buffer)
     (key-chord-define-global "jl" 'end-of-buffer)
 
