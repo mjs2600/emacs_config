@@ -11,5 +11,6 @@ places
 projectile-bookmarks.eld
 session.*
 url/
+request/
 tramp
 /emms/cache
