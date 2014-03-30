@@ -305,6 +305,21 @@ for Clojure, ELisp, and Racket now.
       (windmove-default-keybindings)
     #+end_src
 
+* eVIl
+
+** Evil Leader Bindings
+  #+begin_src emacs-lisp
+    (global-evil-leader-mode t)
+    (evil-leader/set-leader ",")
+    (evil-leader/set-key "f" 'projectile-find-file
+                         "b" 'ido-switch-buffer
+                         "d" 'dired
+                         "g" 'find-file
+                         "x" 'smex
+                         "s" 'ag
+                         "t" 'eshell)
+
+  #+end_src
 * Key Chords
 
 
