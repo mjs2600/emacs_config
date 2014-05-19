@@ -190,11 +190,14 @@ My Emacs Configuration File
 
     (icomplete-mode 0)
     (ido-ubiquitous 1)
+    (require 'yasnippet)
+    (yas-global-mode 1)
   #+end_src
 
 * Haskell
   #+begin_src emacs-lisp
     (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+    (add-hook 'haskell-mode-hook 'turn-on-haskell-doc)
     (add-hook 'haskell-mode-hook 'haskell-flymake-init)
     (add-hook 'haskell-mode-hook 'flymake-hlint-load)
     (add-hook 'haskell-mode-hook 'ghci-completion-mode)
@@ -208,6 +211,7 @@ My Emacs Configuration File
 ** CoffeeScript
   #+begin_src emacs-lisp
     (setq coffee-tab-width 2)
+    (add-hook 'coffee-mode-hook 'flymake-coffee-load)
   #+end_src
 
 * Ruby
@@ -235,7 +239,8 @@ My Emacs Configuration File
     (setq last-command-char last-command-event)
     ;;(setq inf-ruby-keys inf-ruby-setup-keybindings)
 
-    (setq scss-compile-at-save nil)
+    (add-hook 'ruby-mode-hook 'flymake-ruby-load)
+
   #+end_src
 
 ** Rails
@@ -250,6 +255,16 @@ My Emacs Configuration File
     (add-to-list 'auto-mode-alist '("\\.erb$" . rhtml-mode))
     (add-hook 'rinari-minor-mode-hook
               (lambda () (setq dash-at-point-docset "rails")))
+  #+end_src
+
+
+* CSS
+
+** Sass
+  #+begin_src emacs-lisp
+    (add-hook 'sass-mode-hook 'flymake-sass-load)
+    (add-hook 'scss-mode-hook 'flymake-sass-load)
+    (setq scss-compile-at-save nil)
   #+end_src
 
 * Lisp
@@ -295,6 +310,22 @@ for Clojure, ELisp, and Racket now.
     (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
     (setq nrepl-buffer-name-show-port t)
     (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
+  #+end_src
+
+
+* Elixir
+  #+begin_src emacs-lisp
+    (add-hook 'elixir-mode-hook 'flymake-elixir-load)
+  #+end_src
+
+* YAML
+  #+begin_src emacs-lisp
+    (add-hook 'yaml-mode-hook 'flymake-yaml-load)
+  #+end_src
+
+* Shell
+  #+begin_src emacs-lisp
+    (add-hook 'sh-set-shell-hook 'flymake-shell-load)
   #+end_src
 
 * eShell
