@@ -83,7 +83,9 @@ My Emacs Configuration File
    #+end_src
 
 ** ERC
-
+   #+begin_src emacs-lisp
+     (setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT"))
+   #+end_src
 ** Twitter
    #+begin_src emacs-lisp
      (require 'twittering-mode)
