@@ -281,12 +281,6 @@ for Clojure, ELisp, and Racket now.
     (setq inferior-lisp-program "ccl")
   #+end_src
 
-** Slime
-  #+begin_src emacs-lisp
-    (load (expand-file-name "~/quicklisp/slime-helper.el"))
-    (slime-setup '(slime-fancy))
-    (setq slime-use-autodoc-mode nil)
-  #+end_src
 ** Paredit
   #+begin_src emacs-lisp
 
