@@ -18,6 +18,26 @@ My Emacs Configuration File
      (require 'pallet)
    #+end_src
 
+
+** Time
+
+   This is an function to output the current time in a file
+   friendly format.
+
+  #+begin_src emacs-lisp
+    (defun file-timestamp ()
+      (interactive)
+      (insert (format-time-string "%Y%m%d%H%M%S")))
+  #+end_src
+
+   This is an function to output the current time in a document
+   friendly format.
+
+  #+begin_src emacs-lisp
+    (defun document-timestamp ()
+      (interactive)
+      (insert (format-time-string "%Y-%m-%d %H:%M")))
+  #+end_src
 * Personal Information
 
   #+begin_src emacs-lisp
